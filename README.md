@@ -1,2 +1,8 @@
 # ExtensionZoomApp
-ถอดเสียงประชุม Zoom แบบเรียลไทม์ ด้วย AI Chrome extension ที่ถอดเสียงประชุม Zoom สดๆ เป็นข้อความไทย/อังกฤษ พร้อมสรุป meeting notes อัตโนมัติด้วย Google Gemini — ไม่ต้องพึ่ง Zoom AI Companion ข้อมูลทุกอย่างเก็บอยู่ในเครื่องคุณเท่านั้น
+
+Landing page + changelog for [Zoom Meeting Transcriber By OATz](https://chromewebstore.google.com/detail/zoom-meeting-transcriber/ifooikahkfjapipjhokknkgmbcjndnlj) — hosted via GitHub Pages at [akphan25.github.io/ExtensionZoomApp](https://akphan25.github.io/ExtensionZoomApp/).
+
+- `index.html` — landing page (features, setup, privacy, FAQ)
+- `changelog.html` — version history timeline
+
+Static, self-contained HTML/CSS. No build step. Edit and push to `main` to deploy.
