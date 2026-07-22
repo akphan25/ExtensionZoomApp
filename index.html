@@ -667,6 +667,7 @@
     <nav class="nav-links">
       <a href="#features">ฟีเจอร์</a>
       <a href="#how-it-works">วิธีใช้งาน</a>
+      <a href="#workspace">Workspace</a>
       <a href="#privacy">ความเป็นส่วนตัว</a>
       <a href="#faq">คำถามที่พบบ่อย</a>
       <a href="changelog.html">Changelog</a>
@@ -683,7 +684,7 @@
     <div class="container">
       <div class="hero-grid">
         <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span> ใช้งานได้แล้วบน Chrome Web Store</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> ใหม่ v1.2.0 — Import ไฟล์, ลบประชุม & Gemini 3.5</div>
           <h1>ถอดเสียงประชุม Zoom<br>แบบเรียลไทม์ <span class="accent">ด้วย Gemini AI</span></h1>
           <p class="hero-sub">
             Chrome extension ถอดเสียงสดเป็นข้อความไทย/อังกฤษ พร้อมสร้างสรุป Meeting Notes อัตโนมัติด้วย Google Gemini — ไม่พึ่ง Zoom AI Companion และเก็บข้อมูลไว้ในเครื่องคุณเท่านั้น
@@ -711,7 +712,7 @@
                   <rect x="8" y="5" width="2" height="5" rx="1" fill="white" opacity="0.8"/>
                   <rect x="11.5" y="4" width="2" height="7" rx="1" fill="white" opacity="0.7"/>
                 </svg>
-                Zoom Transcriber
+                Zoom Meeting Transcriber
               </div>
               <div class="rec-pill"><span class="rec-dot"></span> REC 12:34</div>
             </div>
@@ -719,7 +720,9 @@
               <div class="mock-tab active">Transcript</div>
               <div class="mock-tab">Notes</div>
               <div class="mock-tab">History</div>
+              
               <div class="mock-tab">Settings</div>
+              <div class="mock-tab">About</div>
             </div>
             <div class="popup-mock-body">
               <div class="turn">
@@ -793,6 +796,11 @@
           <h3>เก็บข้อมูลในเครื่องคุณ</h3>
           <p>ไม่มีเซิร์ฟเวอร์กลาง ประวัติการประชุมเก็บใน Chrome storage บนเครื่องคุณเท่านั้น</p>
         </div>
+        <div class="feature-card">
+          <div class="feature-icon">📥</div>
+          <h3>นำเข้า transcript จากไฟล์ <span class="check" style="font-size:13px;">v1.2.0</span></h3>
+          <p>Import บทถอดเสียงจากไฟล์ SRT, VTT, TXT หรือ JSON เพื่อสรุป AI notes จากบันทึกที่มีอยู่แล้ว — พร้อม Workspace ดีไซน์ใหม่ที่อ่านง่ายขึ้น</p>
+        </div>
       </div>
     </div>
   </section>
@@ -829,6 +837,57 @@
         <span style="font-size:20px;">🔑</span>
         <div>
           <strong>ต้องใช้ Gemini API Key ของตัวเอง (BYOK)</strong> — Extension นี้ไม่มี backend หรือเซิร์ฟเวอร์กลาง จึงเรียก Gemini API โดยตรงจากเครื่องคุณผ่าน API Key ส่วนตัว
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKSPACE -->
+  <section id="workspace">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Workspace</div>
+        <h2>ศูนย์กลางจัดการประชุมย้อนหลัง</h2>
+        <p class="section-sub">เปิดหน้าเต็มจอจาก History → “Open Workspace” เพื่อดู แก้ และค้นทุกอย่างของการประชุมในที่เดียว</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3>บทถอดเสียง + ค้นหา</h3>
+          <p>อ่านบทถอดเสียงเต็ม เรียงตามเวลา แยกผู้พูด ค้นหาข้อความ และแก้ชื่อผู้พูดย้อนหลังได้</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>AI Notes + Scratchpad</h3>
+          <p>สร้างและแก้ไขสรุป AI Notes เอง พร้อมช่อง Scratchpad สำหรับจดส่วนตัว และมีประวัติเวอร์ชันให้กู้คืน</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <h3>Action Items</h3>
+          <p>ดึงงานที่ต้องทำจากบทถอดเสียงอัตโนมัติ พร้อมผู้รับผิดชอบ กำหนดส่ง สถานะ และลิงก์กลับไปยังหลักฐาน</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💬</div>
+          <h3>Highlights + Ask AI</h3>
+          <p>ดูจุดสำคัญที่ปักหมุดไว้ และถามคำถามเกี่ยวกับการประชุมได้ทันที AI ตอบพร้อมอ้างอิง timestamp</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📥</div>
+          <h3>Import &amp; Export</h3>
+          <p>นำเข้าบทถอดเสียงจากไฟล์ SRT / VTT / TXT / JSON และส่งออกเป็น Markdown, Plain text, JSON หรือ SRT</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+          <h3>จัดการรายการประชุม</h3>
+          <p>แถบข้างรวมประชุมทั้งหมด กรอง/เรียงลำดับ จัดกลุ่มตามวัน (วันนี้/เมื่อวาน) และลบประชุมที่ไม่ต้องการได้</p>
+        </div>
+      </div>
+
+      <div class="byok-note">
+        <span style="font-size:20px;">✨</span>
+        <div>
+          <strong>ดีไซน์ใหม่ใน v1.2.0</strong> — ยกเครื่องลำดับชั้นหน้า Workspace ให้พื้นผิวแยกชั้นชัดเจน typography และฟอนต์ตรงกับ popup อ่านง่ายทั้งโหมดสว่างและมืด
         </div>
       </div>
     </div>
@@ -891,6 +950,22 @@
         <details>
           <summary>ถ้าเน็ตหลุดกลางประชุม เสียงจะหายไหม</summary>
           <p>ไม่หาย — ช่วงที่ถอดเสียงไม่สำเร็จเพราะเน็ตหลุดจะถูกเว้นเก็บไว้ในบัฟเฟอร์ และถอดเสียงซ้ำอัตโนมัติเมื่อกลับมาออนไลน์</p>
+        </details>
+        <details>
+          <summary>Workspace คืออะไร เปิดยังไง</summary>
+          <p>Workspace คือหน้าเต็มจอสำหรับจัดการประชุมย้อนหลัง รวมบทถอดเสียง AI Notes งานที่ต้องทำ และ Ask AI ไว้ในที่เดียว เปิดได้จากแท็บ History ในตัว extension แล้วกดปุ่ม “Open Workspace” ที่การประชุมที่ต้องการ</p>
+        </details>
+        <details>
+          <summary>นำเข้าบทถอดเสียงเก่าที่มีอยู่แล้วได้ไหม</summary>
+          <p>ได้ — ใน Workspace รองรับการ Import ไฟล์ SRT, VTT, TXT และ JSON เพื่อนำบทถอดเสียงที่มีอยู่แล้วเข้ามาสรุป AI Notes, ดึง Action items หรือถาม AI ต่อได้ทันที โดยไม่ต้องอัดใหม่</p>
+        </details>
+        <details>
+          <summary>Action items และ Ask AI ทำงานยังไง</summary>
+          <p>Action items ดึงงานที่ต้องทำจากบทถอดเสียงอัตโนมัติ พร้อมผู้รับผิดชอบ กำหนดส่ง และสถานะ กดดูหลักฐานต้นทางในบทถอดเสียงได้ ส่วน Ask AI ให้ถามคำถามเกี่ยวกับการประชุมนั้นได้อิสระ โดย AI ตอบพร้อมอ้างอิง timestamp ที่มาของคำตอบ</p>
+        </details>
+        <details>
+          <summary>แก้ AI Notes เองได้ไหม ถ้าแก้ผิดจะย้อนกลับได้ไหม</summary>
+          <p>ได้ทั้งสองอย่าง — แก้ไข AI Notes ได้เองเต็มที่ พร้อมช่อง Scratchpad สำหรับจดส่วนตัวแยกต่างหาก และทุกครั้งที่สร้างหรือแก้โน้ต ระบบจะเก็บเป็นเวอร์ชันไว้ให้ย้อนดูและกู้คืน (Revisions) ได้</p>
         </details>
       </div>
     </div>

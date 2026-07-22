@@ -475,14 +475,54 @@
     <div class="container-narrow">
       <div class="timeline">
 
-        <!-- VERSION 1.1.0 -->
+        <!-- VERSION 1.2.0 -->
         <div class="release-item latest">
           <div class="release-node"></div>
           <div class="release-card">
             <div class="release-header">
               <div class="version-meta">
-                <span class="version-tag">v1.1.0</span>
+                <span class="version-tag">v1.2.0</span>
                 <span class="badge-latest">Latest</span>
+              </div>
+              <div class="release-date">22 กรกฎาคม 2026</div>
+            </div>
+            <div class="release-title">Workspace Redesign, Import & Model Upgrade</div>
+            <ul class="release-list">
+              <li>
+                <span class="badge-pill feature">NEW</span>
+                <span><strong>ยกเครื่องดีไซน์หน้า Workspace ทั้งหมด</strong> — พื้นผิว (surface) แยก 3 ระดับความลึก, typography และฟอนต์ (Inter + IBM Plex Sans Thai) ตรงกับ popup, live badge เต้นจังหวะบอกสถานะบันทึก, eyebrow เหนือชื่อการประชุม และ empty state พร้อมไอคอน+คำแนะนำในทุกมุมมอง</span>
+              </li>
+              <li>
+                <span class="badge-pill feature">NEW</span>
+                <span><strong>นำเข้าการประชุมจากไฟล์</strong> — รองรับการ import transcript จากไฟล์ <strong>SRT, VTT, TXT และ JSON</strong> พร้อมตรวจสอบความถูกต้องของข้อมูล เพื่อสรุป AI notes จากบันทึกที่มีอยู่แล้วได้</span>
+              </li>
+              <li>
+                <span class="badge-pill feature">NEW</span>
+                <span><strong>ลบการประชุมได้</strong> — เพิ่มปุ่มลบการประชุมพร้อมยืนยัน ลบทั้งบทถอดเสียง ประวัติเวอร์ชัน และงานที่ต้องทำในครั้งเดียว</span>
+              </li>
+              <li>
+                <span class="badge-pill improvement">IMP</span>
+                <span><strong>อัปเกรดเป็น Gemini 3.5</strong> — เปลี่ยนโมเดลถอดเสียงเป็น Gemini 3.5 ให้ความแม่นยำสูงขึ้น พร้อม fallback chain เดิม</span>
+              </li>
+              <li>
+                <span class="badge-pill improvement">IMP</span>
+                <span><strong>การ์ดรายการและแถบข้างที่สื่อความหมายขึ้น</strong> — การ์ด Actions / Highlights / Revisions ใช้เส้นขอบบาง (ring) แทนกรอบหนา และไฮไลต์การประชุมที่เลือกในแถบข้างด้วย accent สีเขียว</span>
+              </li>
+              <li>
+                <span class="badge-pill fix">FIX</span>
+                <span><strong>ปรับปรุงย่อยและแก้บั๊ก</strong> — ตัด timestamp ที่โมเดล echo ซ้ำออกจากบทถอดเสียง, กันการสร้าง notes ก่อนมี meeting, ปรับระยะห่าง/มุมโค้งของ modal ให้สม่ำเสมอ และแก้การ forward ref ผ่านปุ่ม</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- VERSION 1.1.0 -->
+        <div class="release-item">
+          <div class="release-node"></div>
+          <div class="release-card">
+            <div class="release-header">
+              <div class="version-meta">
+                <span class="version-tag">v1.1.0</span>
               </div>
               <div class="release-date">20 กรกฎาคม 2026</div>
             </div>
