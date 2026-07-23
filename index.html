@@ -171,6 +171,9 @@
 
   .btn-sm { padding: 8px 16px; font-size: 13px; border-radius: 8px; }
   .btn-lg { padding: 14px 28px; font-size: 15.5px; border-radius: 12px; }
+  .btn svg { flex-shrink: 0; }
+  .btn-sm svg { width: 15px; height: 15px; }
+  .btn-lg svg { width: 18px; height: 18px; }
 
   /* -------------------------------------------------------------
      HERO SECTION
@@ -262,7 +265,8 @@
     color: var(--text-soft);
   }
   .trust-row span { display: flex; align-items: center; gap: 6px; }
-  .check { color: var(--primary-500); font-weight: 800; }
+  .check { color: var(--primary-500); font-weight: 800; display: inline-flex; }
+  .check svg { width: 15px; height: 15px; stroke-width: 3px; }
 
   /* MOCKUP INTERACTION */
   .mockup-wrap {
@@ -429,9 +433,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
     margin-bottom: 20px;
   }
+  .feature-icon svg { width: 23px; height: 23px; stroke-width: 2px; }
   @media (prefers-color-scheme: dark) {
     .feature-icon { background: color-mix(in srgb, var(--primary-700) 30%, transparent); color: var(--primary-300); }
   }
@@ -542,9 +546,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
     font-weight: 800;
   }
+  .privacy-item .badge svg { width: 14px; height: 14px; stroke-width: 2.5px; }
   @media (prefers-color-scheme: dark) {
     .privacy-item .badge { background: color-mix(in srgb, var(--primary-700) 35%, transparent); color: var(--primary-300); }
   }
@@ -580,14 +584,14 @@
     gap: 12px;
   }
   summary::-webkit-details-marker { display: none; }
-  summary::after {
-    content: "+";
-    font-size: 22px;
-    font-weight: 400;
+  .faq-chevron {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
     color: var(--primary-600);
     transition: transform 150ms ease;
   }
-  details[open] summary::after { transform: rotate(45deg); }
+  details[open] .faq-chevron { transform: rotate(180deg); }
 
   details p {
     padding-bottom: 18px;
@@ -673,7 +677,7 @@
       <a href="changelog.html">Changelog</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="https://chromewebstore.google.com/detail/zoom-meeting-transcriber/ifooikahkfjapipjhokknkgmbcjndnlj" target="_blank" rel="noopener">
-      เพิ่มลง Chrome
+      <i data-lucide="chrome"></i> เพิ่มลง Chrome
     </a>
   </div>
 </header>
@@ -691,14 +695,14 @@
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary btn-lg" href="https://chromewebstore.google.com/detail/zoom-meeting-transcriber/ifooikahkfjapipjhokknkgmbcjndnlj" target="_blank" rel="noopener">
-              ⬇ เพิ่มลง Chrome ฟรี
+              <i data-lucide="download"></i> เพิ่มลง Chrome ฟรี
             </a>
             <a class="btn btn-ghost btn-lg" href="#how-it-works">ดูวิธีใช้งาน</a>
           </div>
           <div class="trust-row">
-            <span><span class="check">✓</span> ฟรี ไม่มีค่าใช้จ่าย</span>
-            <span><span class="check">✓</span> ไม่มีเซิร์ฟเวอร์กลาง</span>
-            <span><span class="check">✓</span> รองรับภาษาไทย</span>
+            <span><span class="check"><i data-lucide="check"></i></span> ฟรี ไม่มีค่าใช้จ่าย</span>
+            <span><span class="check"><i data-lucide="check"></i></span> ไม่มีเซิร์ฟเวอร์กลาง</span>
+            <span><span class="check"><i data-lucide="check"></i></span> รองรับภาษาไทย</span>
           </div>
         </div>
 
@@ -767,37 +771,37 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">🎙️</div>
+          <div class="feature-icon"><i data-lucide="mic"></i></div>
           <h3>ถอดเสียงเรียลไทม์ ไทย/อังกฤษ</h3>
           <p>ถอดเสียงเป็นข้อความสดขณะประชุม รองรับไทย อังกฤษ และแบบผสม พร้อมแยกผู้พูดและ timestamp</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📝</div>
+          <div class="feature-icon"><i data-lucide="file-text"></i></div>
           <h3>สรุปประชุมด้วย AI</h3>
           <p>สร้าง summary, key takeaways และ action items — เลือก template ประชุมได้ 6 แบบ หรือสร้างเองได้</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💬</div>
+          <div class="feature-icon"><i data-lucide="message-circle"></i></div>
           <h3>ถามต่อจาก transcript</h3>
           <p>ถามคำถามเกี่ยวกับการประชุมย้อนหลังได้ทันที AI ตอบพร้อมอ้างอิง timestamp</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">⭐</div>
+          <div class="feature-icon"><i data-lucide="star"></i></div>
           <h3>Mark Moment สำคัญ</h3>
           <p>กด bookmark จุดสำคัญด้วยคีย์ลัด Cmd/Ctrl+Shift+M เพื่อให้ AI notes เน้นจุดนั้นเป็นพิเศษ</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📤</div>
+          <div class="feature-icon"><i data-lucide="file-down"></i></div>
           <h3>Export หลายรูปแบบ</h3>
           <p>ส่งออกเป็น Markdown, Plain text, JSON หรือ SRT subtitle พร้อมรูปแบบสำหรับ Google NotebookLM</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🔒</div>
+          <div class="feature-icon"><i data-lucide="lock"></i></div>
           <h3>เก็บข้อมูลในเครื่องคุณ</h3>
           <p>ไม่มีเซิร์ฟเวอร์กลาง ประวัติการประชุมเก็บใน Chrome storage บนเครื่องคุณเท่านั้น</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📥</div>
+          <div class="feature-icon"><i data-lucide="file-up"></i></div>
           <h3>นำเข้า transcript จากไฟล์ <span class="check" style="font-size:13px;">v1.2.0</span></h3>
           <p>Import บทถอดเสียงจากไฟล์ SRT, VTT, TXT หรือ JSON เพื่อสรุป AI notes จากบันทึกที่มีอยู่แล้ว — พร้อม Workspace ดีไซน์ใหม่ที่อ่านง่ายขึ้น</p>
         </div>
@@ -834,7 +838,7 @@
       </div>
 
       <div class="byok-note">
-        <span style="font-size:20px;">🔑</span>
+        <i data-lucide="key" style="width:20px;height:20px;flex-shrink:0;color:var(--primary-600);"></i>
         <div>
           <strong>ต้องใช้ Gemini API Key ของตัวเอง (BYOK)</strong> — Extension นี้ไม่มี backend หรือเซิร์ฟเวอร์กลาง จึงเรียก Gemini API โดยตรงจากเครื่องคุณผ่าน API Key ส่วนตัว
         </div>
@@ -853,39 +857,39 @@
 
       <div class="features-grid">
         <div class="feature-card">
-          <div class="feature-icon">📄</div>
+          <div class="feature-icon"><i data-lucide="file-search"></i></div>
           <h3>บทถอดเสียง + ค้นหา</h3>
           <p>อ่านบทถอดเสียงเต็ม เรียงตามเวลา แยกผู้พูด ค้นหาข้อความ และแก้ชื่อผู้พูดย้อนหลังได้</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📝</div>
+          <div class="feature-icon"><i data-lucide="notebook-pen"></i></div>
           <h3>AI Notes + Scratchpad</h3>
           <p>สร้างและแก้ไขสรุป AI Notes เอง พร้อมช่อง Scratchpad สำหรับจดส่วนตัว และมีประวัติเวอร์ชันให้กู้คืน</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">✅</div>
+          <div class="feature-icon"><i data-lucide="list-checks"></i></div>
           <h3>Action Items</h3>
           <p>ดึงงานที่ต้องทำจากบทถอดเสียงอัตโนมัติ พร้อมผู้รับผิดชอบ กำหนดส่ง สถานะ และลิงก์กลับไปยังหลักฐาน</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">💬</div>
+          <div class="feature-icon"><i data-lucide="sparkles"></i></div>
           <h3>Highlights + Ask AI</h3>
           <p>ดูจุดสำคัญที่ปักหมุดไว้ และถามคำถามเกี่ยวกับการประชุมได้ทันที AI ตอบพร้อมอ้างอิง timestamp</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">📥</div>
+          <div class="feature-icon"><i data-lucide="arrow-right-left"></i></div>
           <h3>Import &amp; Export</h3>
           <p>นำเข้าบทถอดเสียงจากไฟล์ SRT / VTT / TXT / JSON และส่งออกเป็น Markdown, Plain text, JSON หรือ SRT</p>
         </div>
         <div class="feature-card">
-          <div class="feature-icon">🗂️</div>
+          <div class="feature-icon"><i data-lucide="folder-kanban"></i></div>
           <h3>จัดการรายการประชุม</h3>
           <p>แถบข้างรวมประชุมทั้งหมด กรอง/เรียงลำดับ จัดกลุ่มตามวัน (วันนี้/เมื่อวาน) และลบประชุมที่ไม่ต้องการได้</p>
         </div>
       </div>
 
       <div class="byok-note">
-        <span style="font-size:20px;">✨</span>
+        <i data-lucide="sparkles" style="width:20px;height:20px;flex-shrink:0;color:var(--primary-600);"></i>
         <div>
           <strong>ดีไซน์ใหม่ใน v1.2.0</strong> — ยกเครื่องลำดับชั้นหน้า Workspace ให้พื้นผิวแยกชั้นชัดเจน typography และฟอนต์ตรงกับ popup อ่านง่ายทั้งโหมดสว่างและมืด
         </div>
@@ -906,19 +910,19 @@
         </div>
         <div class="privacy-list">
           <div class="privacy-item">
-            <span class="badge">✓</span>
+            <span class="badge"><i data-lucide="check"></i></span>
             <span>ไม่มีเซิร์ฟเวอร์กลาง — ไม่มีการส่งข้อมูลไปที่เซิร์ฟเวอร์ของเรา</span>
           </div>
           <div class="privacy-item">
-            <span class="badge">✓</span>
+            <span class="badge"><i data-lucide="check"></i></span>
             <span>เสียงและประวัติการประชุมเก็บใน Chrome storage บนเครื่องคุณเท่านั้น</span>
           </div>
           <div class="privacy-item">
-            <span class="badge">✓</span>
+            <span class="badge"><i data-lucide="check"></i></span>
             <span>API key เก็บแบบปลอดภัยในเครื่อง ไม่ถูกส่งไปที่อื่น</span>
           </div>
           <div class="privacy-item warn">
-            <span class="badge">!</span>
+            <span class="badge"><i data-lucide="triangle-alert"></i></span>
             <span>เสียงถูกส่งตรงไปที่ Google Gemini API เพื่อถอดเสียง ตามข้อตกลงบริการของ Gemini</span>
           </div>
         </div>
@@ -936,35 +940,35 @@
 
       <div class="faq-list">
         <details open>
-          <summary>ต้องเสียเงินไหม</summary>
+          <summary><span>ต้องเสียเงินไหม</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>ตัว Extension ใช้งานฟรีทั้งหมด ค่าใช้จ่ายเดียวคือ Gemini API ซึ่ง Google มี Free tier ให้ใช้อยู่แล้ว</p>
         </details>
         <details>
-          <summary>เกี่ยวข้องกับ Zoom AI Companion ไหม</summary>
+          <summary><span>เกี่ยวข้องกับ Zoom AI Companion ไหม</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>ไม่เกี่ยวข้องกัน Extension นี้พัฒนาขึ้นโดยอิสระ โดยใช้ Google Gemini เป็นเครื่องมือถอดเสียงแทน</p>
         </details>
         <details>
-          <summary>รองรับภาษาอะไรบ้าง</summary>
+          <summary><span>รองรับภาษาอะไรบ้าง</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>รองรับ ภาษาไทย ภาษาอังกฤษ และแบบผสม Thai-English ทั้งการถอดเสียงและสรุป AI Notes</p>
         </details>
         <details>
-          <summary>ถ้าเน็ตหลุดกลางประชุม เสียงจะหายไหม</summary>
+          <summary><span>ถ้าเน็ตหลุดกลางประชุม เสียงจะหายไหม</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>ไม่หาย — ช่วงที่ถอดเสียงไม่สำเร็จเพราะเน็ตหลุดจะถูกเว้นเก็บไว้ในบัฟเฟอร์ และถอดเสียงซ้ำอัตโนมัติเมื่อกลับมาออนไลน์</p>
         </details>
         <details>
-          <summary>Workspace คืออะไร เปิดยังไง</summary>
+          <summary><span>Workspace คืออะไร เปิดยังไง</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>Workspace คือหน้าเต็มจอสำหรับจัดการประชุมย้อนหลัง รวมบทถอดเสียง AI Notes งานที่ต้องทำ และ Ask AI ไว้ในที่เดียว เปิดได้จากแท็บ History ในตัว extension แล้วกดปุ่ม “Open Workspace” ที่การประชุมที่ต้องการ</p>
         </details>
         <details>
-          <summary>นำเข้าบทถอดเสียงเก่าที่มีอยู่แล้วได้ไหม</summary>
+          <summary><span>นำเข้าบทถอดเสียงเก่าที่มีอยู่แล้วได้ไหม</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>ได้ — ใน Workspace รองรับการ Import ไฟล์ SRT, VTT, TXT และ JSON เพื่อนำบทถอดเสียงที่มีอยู่แล้วเข้ามาสรุป AI Notes, ดึง Action items หรือถาม AI ต่อได้ทันที โดยไม่ต้องอัดใหม่</p>
         </details>
         <details>
-          <summary>Action items และ Ask AI ทำงานยังไง</summary>
+          <summary><span>Action items และ Ask AI ทำงานยังไง</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>Action items ดึงงานที่ต้องทำจากบทถอดเสียงอัตโนมัติ พร้อมผู้รับผิดชอบ กำหนดส่ง และสถานะ กดดูหลักฐานต้นทางในบทถอดเสียงได้ ส่วน Ask AI ให้ถามคำถามเกี่ยวกับการประชุมนั้นได้อิสระ โดย AI ตอบพร้อมอ้างอิง timestamp ที่มาของคำตอบ</p>
         </details>
         <details>
-          <summary>แก้ AI Notes เองได้ไหม ถ้าแก้ผิดจะย้อนกลับได้ไหม</summary>
+          <summary><span>แก้ AI Notes เองได้ไหม ถ้าแก้ผิดจะย้อนกลับได้ไหม</span><i data-lucide="chevron-down" class="faq-chevron"></i></summary>
           <p>ได้ทั้งสองอย่าง — แก้ไข AI Notes ได้เองเต็มที่ พร้อมช่อง Scratchpad สำหรับจดส่วนตัวแยกต่างหาก และทุกครั้งที่สร้างหรือแก้โน้ต ระบบจะเก็บเป็นเวอร์ชันไว้ให้ย้อนดูและกู้คืน (Revisions) ได้</p>
         </details>
       </div>
@@ -978,7 +982,7 @@
         <h2>พร้อมเริ่มประชุมแบบมี AI ช่วยจดแล้วหรือยัง</h2>
         <p>ติดตั้งฟรีจาก Chrome Web Store ใช้เวลาตั้งค่าไม่ถึงนาที</p>
         <a class="btn btn-white btn-lg" href="https://chromewebstore.google.com/detail/zoom-meeting-transcriber/ifooikahkfjapipjhokknkgmbcjndnlj" target="_blank" rel="noopener">
-          ⬇ เพิ่มลง Chrome ฟรี
+          <i data-lucide="download"></i> เพิ่มลง Chrome ฟรี
         </a>
       </div>
     </div>
@@ -999,5 +1003,9 @@
   </div>
 </footer>
 
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script>
+  lucide.createIcons({ strokeWidth: 2 });
+</script>
 </body>
 </html>
