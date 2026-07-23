@@ -651,6 +651,29 @@
     .privacy-grid { grid-template-columns: 1fr; gap: 32px; }
     section { padding: 64px 0; }
   }
+
+  /* -------------------------------------------------------------
+     SCROLL REVEAL
+  ------------------------------------------------------------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* LUCIDE FADE-IN (avoids icons popping in abruptly once the CDN script loads) */
+  svg.lucide { opacity: 0; transition: opacity 260ms ease; }
+  svg.lucide.lucide-fade-in { opacity: 1; }
+  @media (prefers-reduced-motion: reduce) {
+    svg.lucide { opacity: 1; transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -1005,7 +1028,47 @@
 
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 <script>
-  lucide.createIcons({ strokeWidth: 2 });
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons({ strokeWidth: 2 });
+    requestAnimationFrame(() => {
+      document.querySelectorAll('svg.lucide').forEach((svg) => svg.classList.add('lucide-fade-in'));
+    });
+  }
+
+  (function initScrollReveal() {
+    const items = document.querySelectorAll(
+      '.section-head, .feature-card, .step-card, .privacy-item, .faq-list > details, .byok-note'
+    );
+    items.forEach((el) => el.classList.add('reveal'));
+
+    const groups = document.querySelectorAll('.features-grid, .steps, .privacy-list, .faq-list');
+    groups.forEach((group) => {
+      Array.from(group.children).forEach((child, i) => {
+        if (child.classList.contains('reveal')) {
+          child.style.transitionDelay = `${Math.min(i, 5) * 70}ms`;
+        }
+      });
+    });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+      items.forEach((el) => el.classList.add('is-visible'));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+    );
+    items.forEach((el) => observer.observe(el));
+  })();
 </script>
 </body>
 </html>
