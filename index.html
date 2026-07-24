@@ -265,6 +265,25 @@
     color: var(--text-soft);
   }
   .trust-row span { display: flex; align-items: center; gap: 6px; }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: var(--text-muted);
+    background: var(--surface-card);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 14px 7px 10px;
+    margin-bottom: 20px;
+    transition: border-color 150ms ease, transform 150ms ease;
+  }
+  .rating-badge:hover { border-color: var(--primary-400); transform: translateY(-1px); }
+  .rating-stars { display: inline-flex; gap: 1px; color: #f59e0b; }
+  .rating-stars svg { width: 14px; height: 14px; fill: currentColor; }
+  .rating-badge strong { color: var(--text); font-weight: 700; }
+  .rating-count { color: var(--text-soft); }
   .check { color: var(--primary-500); font-weight: 800; display: inline-flex; }
   .check svg { width: 15px; height: 15px; stroke-width: 3px; }
 
@@ -722,6 +741,12 @@
             </a>
             <a class="btn btn-ghost btn-lg" href="#how-it-works">ดูวิธีใช้งาน</a>
           </div>
+          <a class="rating-badge" href="https://chromewebstore.google.com/detail/zoom-meeting-transcriber/ifooikahkfjapipjhokknkgmbcjndnlj" target="_blank" rel="noopener">
+            <span class="rating-stars">
+              <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            </span>
+            <span><strong>5.0</strong> บน Chrome Web Store <span class="rating-count">· 3 รีวิว</span></span>
+          </a>
           <div class="trust-row">
             <span><span class="check"><i data-lucide="check"></i></span> ฟรี ไม่มีค่าใช้จ่าย</span>
             <span><span class="check"><i data-lucide="check"></i></span> ไม่มีเซิร์ฟเวอร์กลาง</span>
